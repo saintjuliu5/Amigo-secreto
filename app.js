@@ -31,10 +31,14 @@ function mostrarNombres() {
   asignarTextoElemento('#listaAmigos', nombre);
 }
 
-
-function condicionesIniciales() {
-    asignarTextoElemento('#listaAmigos',"");
-    numeroSecreto = generarNumeroSecreto();
-    intentos = 1;
-    console.log(numeroSecreto);
+function sortearAmigo() {
+    let cantidadDeAmigos = listadeamigos.length;
+    if (cantidadDeAmigos === 0) {
+        return;
+    }
+    let numeroLimite = cantidadDeAmigos;
+    let indice = Math.floor(Math.random() * numeroLimite);
+    let amigosecreto = listadeamigos[indice];
+    asignarTextoElemento('#listaAmigos', "El amigo secreto es: " + amigosecreto);
 }
+
